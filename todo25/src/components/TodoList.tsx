@@ -12,7 +12,7 @@ const TodoList = () => {
 
     // usestates
     const [todos, setTodos] = useState<Todo[]>([]);
-    const [error, setError] = useState("");
+    const [error , setError] = useState("");
 
     // create a fetch data function to help us fetch data with axios
     const fetchData = () =>{
@@ -21,7 +21,7 @@ const TodoList = () => {
             .get("https://jsonplaceholder.typicode.com/todos")
             .then(response => setTodos(response.data))
             .catch(error => setError(error));
-            
+
     }
 
     // useeffect to use our functions
