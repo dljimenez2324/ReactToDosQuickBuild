@@ -17,11 +17,11 @@ const TodoList = () => {
     // create a fetch data function to help us fetch data with axios
     const fetchData = () =>{
 
-        
         axios
             .get("https://jsonplaceholder.typicode.com/todos")
             .then(response => setTodos(response.data))
             .catch(error => setError(error));
+            
     }
 
     // useeffect to use our functions
