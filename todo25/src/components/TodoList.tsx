@@ -34,7 +34,7 @@ const TodoList = () => {
     <>
         {todos.map((todo) => (
             <li key={todo.id}>{todo.title}</li>
-        ))};;
+        ))};
     </>
   )
 }
