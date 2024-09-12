@@ -1,6 +1,7 @@
 // import TodoList from "./components/TodoList"
 import TodoListWQuery from "./components/TodoListWQuery"
 import TodoListWQueryHook from "./components/TodoListWQueryHook"
+import TodoListWQueryHookSelect from "./components/TodoListWQueryHookSelect"
 
 const App = () => {
   return (
@@ -12,7 +13,9 @@ const App = () => {
         {/* <TodoListWQuery/> */}
 
         {/* now lets render our custom hook with useTodos*/}
-        <TodoListWQueryHook/>
+        {/* <TodoListWQueryHook/> */}
+
+        <TodoListWQueryHookSelect/>
     </>
   )
 }
