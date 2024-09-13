@@ -9,32 +9,29 @@ interface Todo {
     completed: boolean
 }
 
-// create a custom function that we will use in our QueryHook component
-const useTodos = (userId:number | undefined) => {
+interface TodoQuery {
+    page: number;
+    pageSize: number;
+}
 
-    // const banana = () => {
-        
-    //     return (useQuery<Todo[], Error>({
-    //                 queryKey: userId ? ["users", userId, 'todos'] : ["todos"],
-    //                 queryFn: fetchTodos,
-    //                 staleTime: 10 * 1000 // stale after 10 seconds
-    //                 }));
-    // }
+// create a custom function that we will use in our QueryHook component
+const useTodos = (query: TodoQuery) => {
+
+    
 
     const fetchTodos = () =>
         axios
             .get<Todo[]>("https://jsonplaceholder.typicode.com/todos", {
                 params: {
-                    userId
+                    _start: (query.page -1) * query.pageSize,
+                    _limit: query.pageSize
                 }
             })
             .then(response => response.data)
 
-    // return banana();
-
-    // or you can do
+    
     return useQuery<Todo[], Error>({
-        queryKey: userId ? ["users", userId, 'todos'] : ["todos"],
+        queryKey: ["todos", query],
         queryFn: fetchTodos,
         staleTime: 10 * 1000 // stale after 10 seconds
         });

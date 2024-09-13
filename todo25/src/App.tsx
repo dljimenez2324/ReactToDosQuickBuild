@@ -2,6 +2,7 @@
 import TodoListWQuery from "./components/TodoListWQuery"
 import TodoListWQueryHook from "./components/TodoListWQueryHook"
 import TodoListWQueryHookSelect from "./components/TodoListWQueryHookSelect"
+import TodoListWQueryPagination from "./components/TodoListWQueryPagination"
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
         {/* now lets render our custom hook with useTodos*/}
         {/* <TodoListWQueryHook/> */}
 
-        <TodoListWQueryHookSelect/>
+        {/* <TodoListWQueryHookSelect/> */}
+        <TodoListWQueryPagination/>
     </>
   )
 }
